@@ -9,21 +9,17 @@
     });
     
     cnt=0;
-
-
     function drawChart(arg) {
 
-    cnt++;
-    val =  cnt.toString();
-    document.write(arg);
+      cnt++;
+      arg = arg.toInteger();
+      val =  cnt.toString();
       var data = new google.visualization.arrayToDataTable([
         
         ['Time', '강도'],
           [val, arg]
        ]);
       
-    
-
       var options = {
         title: 'Vibration Measure',
         curveType: 'function',
