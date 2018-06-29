@@ -2,7 +2,9 @@
 
 <head>
   <script src="app.js"></script>
+
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
   <script type="text/javascript">
     google.charts.load('current', {
       'packages': ['corechart']
@@ -13,12 +15,13 @@
 
       cnt++;
       arg = arg.toInteger();
-      val =  cnt.toString();
+      val = cnt.toString();
       var data = new google.visualization.arrayToDataTable([
-        
         ['Time', '강도'],
           ['1', 2],
-          ['2', 3]
+          ['2', 3],
+          ['3', 4],
+          ['4', 5]
        ]);
       
       var options = {
@@ -33,6 +36,7 @@
       chart.draw(data, options);
     }
   </script>
+
 </head>
 
 <body>
