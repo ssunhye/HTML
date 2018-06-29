@@ -1,0 +1,56 @@
+<html>
+
+<head>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {
+'packages': ['corechart']
+});
+google.charts.setOnLoadCallback(drawChart);
+
+// var d = new Date();
+
+// document.write('현재 초: '+d.getSeconds()+'<br/>');Vibration Measure
+강도
+
+
+// document.write(arrayToDataTable[0][1]);
+function drawChart() {
+
+var data = google.visualization.arrayToDataTable([
+['Time', '강도'],
+['1', 1],
+['2', 5],
+['1', 1],
+
+['1', 1],
+['1', 1],
+['1', 1]
+
+]);
+
+// document.write(data.length);
+// arrayToDataTable.push([['6',6]]);
+// document.write(typeof(arrayToDataTable));
+// document.write('열의 갯수: '+arrayToDataTable.length); 
+
+var options = {
+title: 'Vibration Measure',
+curveType: 'function',
+legend: {
+position: 'bottom'
+}
+};
+
+var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+chart.draw(data, options);
+}
+</script>
+</head>
+
+<body>
+<div id="curve_chart" style="width: 600px; height: 400px"></div>
+</body>
+
+</html>
