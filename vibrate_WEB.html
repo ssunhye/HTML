@@ -7,17 +7,25 @@
     google.charts.load('current', {
       'packages': ['corechart']
     });
-    google.charts.setOnLoadCallback(drawChart);
-  cnt=0;
+    
+    var intensity=0;
+    cnt=0;
+    function setMessage(arg){
+      intensity = arg.toString(); 
+    }
+
+    drawChart(intensity);
 
     function drawChart(arg) {
-  cnt++;
-  val =  cnt.toString();
+    cnt++;
+    val =  cnt.toString();
+    setMessage();
+    
+
       var data = new google.visualization.arrayToDataTable([
         
         ['Time', '강도'],
-          [val, 2],
-          [val, 3]
+          [val, arg]
        ]);
       
     
@@ -32,7 +40,6 @@
 
       var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
       chart.draw(data, options);
-
     }
   </script>
 </head>
