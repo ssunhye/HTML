@@ -10,15 +10,15 @@
     google.charts.setOnLoadCallback(drawChart);
     cnt = 0;
 
-    function drawChart() {
+    function drawChart(arg) {
+
       cnt++;
       val = cnt.toString();
-      
       var data = new google.visualization.arrayToDataTable([
 
         ['Time', '강도'],
-        [val, 2],
-        [val, 3]
+        [val, arg],
+        [val, arg]
 
       ]);
 
