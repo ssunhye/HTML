@@ -41,7 +41,7 @@ function drawChart(value) {
 		}
 		return makeDate(hour, minute, (startSecond + index));
 	});
-	var container = document.getElementById('chart-area');
+	var container = document.getElementById('curve-chart');
 	var data = {
 		categories: categories,
 		series: seriesData

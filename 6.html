@@ -2,11 +2,15 @@
 
 <head>
 	<script src ="app.js"></script>
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script></script>
-	<script type="text/javascript">
-		google.charts.load('current', {'packages': ['corechart']});
-		google.charts.setOnLoadCallback(drawChart);
-	</script>	
+	<!-- include application-chart.min.css -->
+	<link rel="stylesheet" type="text/css" href="bower_components/tui-chart/dist/chart.min.css" />
+
+	<!-- include libraries -->
+	<script src="bower_components/tui-code-snippet/code-snippet.min.js"></script>
+	<script src="bower_components/tui-component-effects/effects.min.js"></script>
+	<script src="bower_components/raphael/raphael-min.js"></script>
+	<!-- include chart.min.js -->
+	<script src="bower_components/tui-chart/dist/chart.min.js"></script>	
 </head>
 
 <body>
