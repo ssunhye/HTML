@@ -8,19 +8,18 @@
       'packages': ['corechart']
     });
     google.charts.setOnLoadCallback(drawChart);
-  cnt=0;
+    cnt = 0;
 
     function drawChart(arg) {
-  cnt++;
-  val =  cnt.toString();
+
+      cnt++;
+      val = cnt.toString();
       var data = new google.visualization.arrayToDataTable([
-        
+
         ['Time', '강도'],
-          [val, 2],
-          [val, 3]
-       ]);
-      
-    
+        ['1', arg]
+
+      ]);
 
       var options = {
         title: 'Vibration Measure',
