@@ -13,13 +13,11 @@ function setMessage(arg) {
 	mainFrame.appendChild(createFrame);
 }
 
-function drawChart(value) {
+function drawChart(v) {
 	var legends = ['sound'];
 	var seriesData = tui.util.map(tui.util.range(2), function (value, index) {
 		var name = legends[index];
-		var data = tui.util.map(tui.util.range(20), function () {
-			return getRandom(150, 200);
-		});
+		var data = tui.util.map(tui.util.range(20), v);
 		return {
 			name: name,
 			data: data
@@ -76,7 +74,7 @@ function drawChart(value) {
 		setInterval(function () {
 			var now = new Date();
 			var category = makeDate(now.getHours(), now.getMinutes(), now.getSeconds());
-			var values = [getRandom(150, 200), getRandom(150, 200)];
+			var values = v;
 
 			chart.addData(category, values);
 			index += 1;
