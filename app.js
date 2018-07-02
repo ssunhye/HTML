@@ -13,17 +13,19 @@ function setMessage(arg) {
 	mainFrame.appendChild(createFrame);
 }
 
+time=0;
 function drawChart(value) {
 
+	time++;
 	//데이터 setting
-	var data = google.visualization.arrayToDataTable(value);
-	draw(data, {forceIFrame: false,
-                vAxis: {maxValue: 200}}
-    );
-
+	var data = google.visualization.arrayToDataTable([
+		['date', 'values'],
+		['time', 'value']
+	]);
+	
 	//옵션 setting
 	var options = {
-		title: 'Vibration Meter',
+		title: 'Sound Meter',
 		curveType: 'function',
 		legend: {
 		position: 'bottom'
