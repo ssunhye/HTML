@@ -14,11 +14,11 @@
 	<script>
 		var data=0;
 		function drawChart(val){
-			data=val;
+			data=val/500;
 		}
 
 		Plotly.plot('chart',[{
-			y:[5000],
+			y:[data],
 			type:'line'
 		}]);
 
