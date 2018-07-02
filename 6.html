@@ -16,14 +16,17 @@
 	
 	<script>		
 		var data=0;
+		// hide the modebar (hover bar) buttons, plotly logo. show plotly tooltips
+		var defaultPlotlyConfiguration = { modeBarButtonsToRemove: ['sendDataToCloud', 'autoScale2d', 'hoverClosestCartesian', 'hoverCompareCartesian', 'lasso2d', 'select2d'], displaylogo: false, showTips: true };
+		
 		function drawChart(val){
 			data=val;
 		}
-
+		
 		Plotly.plot('chart',[{
 			y:[data],
 			type:'line'
-		}]);
+		}],defaultPlotlyConfiguration);
 		
 		Plotly.plot('chart2',[{
 			y:[data],
