@@ -22,11 +22,15 @@
 		function drawChart(val){
 			data=val;
 		}
-
+		var layout = {
+			height: 400,
+			width: 500,
+			title: ‘!!’
+		};
 		Plotly.plot('chart',[{
 			y:[data],
 			type:'line'
-		}],defaultPlotlyConfiguration);
+		}],layout,defaultPlotlyConfiguration);
 		
 		Plotly.plot('chart2',[{
 			y:[data],
