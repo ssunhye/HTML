@@ -15,8 +15,11 @@
 	<div id="chart2"></div>
 	
 	<script>
+		// hide the modebar (hover bar) buttons, plotly logo. show plotly tooltips
 		var defaultPlotlyConfiguration = { modeBarButtonsToRemove: ['sendDataToCloud', 'autoScale2d', 'hoverClosestCartesian', 'hoverCompareCartesian', 'lasso2d', 'select2d'], displaylogo: false, showTips: true };
-
+		// display the plot in divId HTML element
+		Plotly.newPlot(divId, plotData, plotLayout, defaultPlotlyConfiguration);
+		
 		var data=0;
 		function drawChart(val){
 			data=val;
