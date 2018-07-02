@@ -17,10 +17,11 @@ time=0;
 function drawChart(value) {
 
 	time++;
+	var val = time.toString();
 	//데이터 setting
 	var data = google.visualization.arrayToDataTable([
 		['date', 'values'],
-		['time', 'value']
+		['val', 'value']
 	]);
 	
 	//옵션 setting
