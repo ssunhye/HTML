@@ -23,11 +23,9 @@
 			data=val;
 		}
 		var layout = {
-			height: 400,
-			width: 500,
 			title: ‘!!’
 		};
-		Plotly.plot('chart',[{
+		Plotly.newPlot('chart',[{
 			y:[data],
 			type:'line'
 		}],layout,defaultPlotlyConfiguration);
