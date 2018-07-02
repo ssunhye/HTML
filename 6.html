@@ -6,11 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-	<div class="navbar"><span>Real-Time Chart with Plotly.js</span></div>
+	<div class="navbar"><span>Real-Time Chart</span></div>
 	<div class="wrapper">
 
 	<div id="chart"></div>
-	<div id="textMessageFromApp"></div>
+	받은 메시지 :
+    <p id="textMessageFromApp" style="height:200px; overflow-y:auto;">
+	
 	<script>
 		var data=0;
 		function drawChart(val){
