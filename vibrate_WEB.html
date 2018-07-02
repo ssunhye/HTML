@@ -12,12 +12,14 @@
 
     function drawChart(arg) {
       arg_val=parseFloat(arg);
+      document.write(arg);
       cnt++;
       val = cnt.toString();
       var data = new google.visualization.arrayToDataTable([
 
         ['Time', '강도'],
-        ['1', arg_val]
+        ['1', 1],
+        ['2', 2]
 
       ]);
 
