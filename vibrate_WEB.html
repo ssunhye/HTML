@@ -1,51 +1,42 @@
 <html>
-
 <head>
-  <script src="app.js"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
-    google.charts.load('current', {
-      'packages': ['corechart']
-    });
-    google.charts.setOnLoadCallback(drawChart);
-  cnt=0;
-
-    function drawChart(arg) {
-  cnt++;
-  val =  cnt.toString();
-      var data = new google.visualization.arrayToDataTable([
-        
-        ['Time', '강도'],
-          [val, 2],
-          [val, 3]
-       ]);
-      
-    
-
-      var options = {
-        title: 'Vibration Measure',
-        curveType: 'function',
-        legend: {
-          position: 'bottom'
-        }
-      };
-
-      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-      chart.draw(data, options);
-
-    }
-  </script>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<script src="jquery-2.1.4.js"></script>
+	<script src="plotly.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-
 <body>
-  <hr/>
-  <h2>진동 감지</h2>
-  <hr/>
-  <div id="curve_chart" style="width: 600px; height: 400px"></div>
-  <br/> 받은 메시지 :
-  <p id="textMessageFromApp" style="height:200px; overflow-y:auto;">
-  </p>
-  <hr/>
-</body>
+	<div class="navbar"><span>Real-Time Chart with Plotly.js</span></div>
+	<div class="wrapper">
 
+	<div id="chart"></div>
+
+	<script>
+		var data=0;
+		function drawChart(val){
+			data=val;
+		}
+
+		Plotly.plot('chart',[{
+			y:[data],
+			type:'line'
+		}]);
+
+		var cnt = 0;
+		setInterval(function(){
+
+			Plotly.extendTraces('chart',{y:[[data]]}, [0]);
+			cnt++;
+
+			if(cnt>500){
+				Plotly.relayout('chart',{
+					xaxis: {
+						range: [cnt-500,cnt]
+					}
+				})
+			}
+		},10);
+	</script>
+	</div>
+</body>
 </html>
