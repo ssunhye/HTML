@@ -13,11 +13,13 @@ function setMessage(arg) {
 	mainFrame.appendChild(createFrame);
 }
 
-function drawChart(v) {
+function drawChart() {
 	var legends = ['sound'];
 	var seriesData = tui.util.map(tui.util.range(2), function (value, index) {
 		var name = legends[index];
-		var data = tui.util.map(tui.util.range(20), v);
+		var data = tui.util.map(tui.util.range(20), function () {
+			return getRandom(150, 200);
+		});
 		return {
 			name: name,
 			data: data
@@ -39,7 +41,7 @@ function drawChart(v) {
 		}
 		return makeDate(hour, minute, (startSecond + index));
 	});
-	var container = document.getElementById('curve-chart');
+	var container = document.getElementById('curve_chart');
 	var data = {
 		categories: categories,
 		series: seriesData
@@ -74,7 +76,7 @@ function drawChart(v) {
 		setInterval(function () {
 			var now = new Date();
 			var category = makeDate(now.getHours(), now.getMinutes(), now.getSeconds());
-			var values = v;
+			var values = [getRandom(150, 200), getRandom(150, 200)];
 
 			chart.addData(category, values);
 			index += 1;
