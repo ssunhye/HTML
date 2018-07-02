@@ -23,13 +23,14 @@
 		}]);
 
 		var cnt = 0;
+		var mainFrame = document.getElementById('textMessageFromApp');
+		var createFrame = document.createElement("div");
+			
 		setInterval(function(){
 
 			Plotly.extendTraces('chart',{y:[[data]]}, [0]);
 			cnt++;
 			
-			var mainFrame = document.getElementById('textMessageFromApp');
-			var createFrame = document.createElement("div");
 			createFrame.innerHTML = data;
 			mainFrame.appendChild(createFrame);
 			
