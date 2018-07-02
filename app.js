@@ -17,7 +17,8 @@ time=0;
 function drawChart(value) {
 
 	time++;
-	var val = time.toString();
+	val = time.toString();
+	value = value.toString();
 	//데이터 setting
 	var data = google.visualization.arrayToDataTable([
 		['date', 'values'],
