@@ -10,7 +10,7 @@
 	<div class="wrapper">
 
 	<div id="chart"></div>
-
+	<div id="textMessageFromApp"></div>
 	<script>
 		var data=0;
 		function drawChart(val){
@@ -27,7 +27,12 @@
 
 			Plotly.extendTraces('chart',{y:[[data]]}, [0]);
 			cnt++;
-
+			
+			var mainFrame = document.getElementById('textMessageFromApp');
+			var createFrame = document.createElement("div");
+			createFrame.innerHTML = data;
+			mainFrame.appendChild(createFrame);
+			
 			if(cnt>500){
 				Plotly.relayout('chart',{
 					xaxis: {
@@ -36,6 +41,7 @@
 				})
 			}
 		},0);
+		
 	</script>
 	</div>
 </body>
