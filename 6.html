@@ -46,10 +46,10 @@
 			createFrame.innerHTML = data;
 			mainFrame.appendChild(createFrame);
 			
-			if(cnt>300){
+			if(cnt>100){
 				Plotly.relayout('chart',{
 					xaxis: {
-						range: [cnt-300,cnt]
+						range: [cnt-100,cnt]
 					}
 				})
 			}
