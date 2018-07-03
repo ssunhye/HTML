@@ -27,6 +27,9 @@
 
 			Plotly.extendTraces('chart',{y:[[data]]}, [0]);
 			cnt++;
+			    modeBarButtonsToRemove: ['sendDataToCloud', 'autoScale2d', 'hoverClosestCartesian', 'hoverCompareCartesian', 'lasso2d', 'select2d'],
+			    displaylogo: false,
+			    showTips: true
 
 			if(cnt>500){
 				Plotly.relayout('chart',{
