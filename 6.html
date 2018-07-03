@@ -3,6 +3,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<script src="jquery-2.1.4.js"></script>
 	<script src="plotly.min.js"></script>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
@@ -17,20 +18,15 @@
 	<script>		
 		var data=0;
 		// hide the modebar (hover bar) buttons, plotly logo. show plotly tooltips
-		var defaultPlotlyConfiguration = { modeBarButtonsToRemove: ['sendDataToCloud', 'autoScale2d', 'hoverClosestCartesian', 'hoverCompareCartesian', 'lasso2d', 'select2d'], displaylogo: false, showTips: true };
 		
 		function drawChart(val){
 			data=val;
 		}
-		var layout = {
-			height: 400,
-			width: 500,
-			title: ‘!!’
-		};
+	
 		Plotly.plot('chart',[{
 			y:[data],
 			type:'line'
-		}],layout,defaultPlotlyConfiguration);
+		}]);
 		
 		Plotly.plot('chart2',[{
 			y:[data],
