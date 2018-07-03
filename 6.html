@@ -17,7 +17,6 @@
 	
 	<script>		
 		var data=0;
-		// hide the modebar (hover bar) buttons, plotly logo. show plotly tooltips
 		
 		function drawChart(val){
 			data=val;
@@ -26,12 +25,12 @@
 		Plotly.plot('chart',[{
 			y:[data],
 			type:'line'
-		}]);
+		}],{displayModeBar: false});
 		
 		Plotly.plot('chart2',[{
 			y:[data],
 			type:'line'
-		}]);
+		}],{displayModeBar: false});
 
 		var cnt = 0;
 		var mainFrame = document.getElementById('textMessageFromApp');
