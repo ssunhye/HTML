@@ -41,15 +41,15 @@
 
 			Plotly.extendTraces('chart',{y:[[data]]}, [0]);
 			Plotly.extendTraces('chart',{y:[[(-1)*data]]}, [0]);
-			cnt++;
+			cnt+=2;
 			
 			createFrame.innerHTML = data;
 			mainFrame.appendChild(createFrame);
 			
-			if(cnt>100){
+			if(cnt>30){
 				Plotly.relayout('chart',{
 					xaxis: {
-						range: [cnt-100,cnt]
+						range: [cnt-30,cnt]
 					}
 				})
 			}
