@@ -8,7 +8,7 @@
 	
 </head>
 <body>
-	<div class="navbar"><span>Real-Time Chart</span></div>
+	<div class="navbar"><span>Sound meter</span></div>
 	<div class="wrapper">
 
 	<div id="chart"></div>
@@ -18,7 +18,6 @@
 	
 	<script>		
 		var data=0;
-		// hide the modebar (hover bar) buttons, plotly logo. show plotly tooltips
 		
 		function drawChart(val){
 			data=val;
@@ -41,16 +40,15 @@
 		setInterval(function(){
 
 			Plotly.extendTraces('chart',{y:[[data]]}, [0]);
-			Plotly.extendTraces('chart',{y:[[(-1)*data]]}, [0]);
-			cnt+=2;
+			++cnt;
 			
 			createFrame.innerHTML = data;
 			mainFrame.appendChild(createFrame);
 			
-			if(cnt>30){
+			if(cnt>40){
 				Plotly.relayout('chart',{
 					xaxis: {
-						range: [cnt-30,cnt]
+						range: [cnt-40,cnt]
 					}
 				})
 			}
