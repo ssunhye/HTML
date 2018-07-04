@@ -38,11 +38,22 @@
 		function drawChart(val){
 			data=val;
 		}
-	
-		Plotly.plot('chart',[{
-			y:[data],
-			type:'line'
-		}]);
+		
+		var trace1 = {
+			x:[data],
+			type: 'line'
+		};
+		var chartData = [trace1];
+		var layout={
+			title: 'Sound Meter',
+			showlegend: true
+		};
+		Plotly.newPlot('chart', data, layout, {displayModeBar: false});
+		
+		//Plotly.plot('chart',[{
+		//	y:[data],
+		//	type:'line'
+		//}]);
 		
 		Plotly.plot('chart2',[{
 			y:[data],
