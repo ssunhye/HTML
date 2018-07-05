@@ -49,6 +49,7 @@ function didntGetStream() {
 }
 
 var mediaStreamSource = null;
+var v = document.getElementById('val');
 
 function gotStream(stream) {
     // Create an AudioNode from the stream.
@@ -74,7 +75,9 @@ function drawLoop( time ) {
 
     // draw a bar based on the current volume
     canvasContext.fillRect(0, 0, meter.volume*WIDTH*1.4, HEIGHT);
-
+	meter.volume;
     // set up the next visual callback
     rafID = window.requestAnimationFrame( drawLoop );
+	
+	v=meter.volume;
 }
