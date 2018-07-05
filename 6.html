@@ -15,7 +15,7 @@
 		padding:0;
 		margin:0;
 	}
-	<!--#chart{
+	#chart{
 		margin:0;
 		padding:0;
 		height:45%;
@@ -24,7 +24,7 @@
 		margin:0;
 		padding:0;
 		height:45%;
-	}-->
+	}
 	</style>
 </head>
 <body>
@@ -48,7 +48,7 @@
 			title: 'Sound Meter',
 			showlegend: true
 		};
-		Plotly.newPlot('chart', chartData, layout, {scrollZoom: false, modeBarButtonsToRemove: ['toImage', 'sendDataToCloud', 'resetScale2d', 'hoverClosestCartesian', 'toggleSpikelines', 'hoverCompareCartesian', 'zoom2d']});
+		Plotly.newPlot('chart', chartData, layout, {modeBarButtonsToRemove: ['toImage', 'sendDataToCloud', 'resetScale2d', 'hoverClosestCartesian', 'toggleSpikelines', 'hoverCompareCartesian', 'zoom2d']});
 		
 		//Plotly.plot('chart',[{
 		//	y:[data],
