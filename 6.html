@@ -55,11 +55,14 @@
 		//	type:'line'
 		//}]);
 		
-		Plotly.plot('chart2',[{
-			y:[data],
-			type:'line'
-		}]);
+		//Plotly.plot('chart2',[{
+		//	y:[data],
+		//	type:'line'
+		//}]);
 
+		Plotly.newPlot('chart2', chartData, layout, {modeBarButtonsToRemove: ['toImage', 'sendDataToCloud', 'resetScale2d', 'hoverClosestCartesian', 'toggleSpikelines', 'hoverCompareCartesian', 'zoom2d']});
+
+		
 		var cnt = 0;
 		var mainFrame = document.getElementById('textMessageFromApp');
 		var createFrame = document.createElement("div");
