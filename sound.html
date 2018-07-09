@@ -132,6 +132,7 @@
 		drawLoop();
 	}
 
+	var num=0;
 	function drawLoop( time ) {
 		// clear the background
 		canvasContext.clearRect(0,0,WIDTH,HEIGHT);
@@ -148,7 +149,8 @@
 		// set up the next visual callback
 		rafID = window.requestAnimationFrame( drawLoop );
 		
-		createFrame.innerHTML = meter.volume*1000;
+		num=meter.volume.toFixed(3);
+		createFrame.innerHTML = num;
 		v.appendChild(createFrame);
 	}
 
