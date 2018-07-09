@@ -150,7 +150,7 @@
 		rafID = window.requestAnimationFrame( drawLoop );
 		
 		num=meter.volume.toFixed(3);
-		createFrame.innerHTML = num;
+		createFrame.innerHTML = num*1000;
 		v.appendChild(createFrame);
 	}
 
