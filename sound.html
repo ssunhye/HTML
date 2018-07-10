@@ -56,14 +56,6 @@
 			}
 			sum += x * x;
 		}
-
-		// ... then take the square root of the sum.
-		//var rms =  Math.sqrt(sum / bufLength);
-
-		// Now smooth this out with the averaging factor applied
-		// to the previous sample - take the max here because we
-		// want "fast attack, slow release."
-		//this.volume = Math.max(rms, this.volume*this.averaging);
 	}
 	
 	var audioContext = null;
@@ -150,7 +142,7 @@
 		rafID = window.requestAnimationFrame( drawLoop );
 		
 		//meter.volume=meter.volume*100000
-		num=meter.volume.toFixed(6)*100000;
+		num=meter.volume.toFixed(3)*100000;
 		
 		createFrame.innerHTML = num;
 		v.appendChild(createFrame);
