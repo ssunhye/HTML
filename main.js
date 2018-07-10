@@ -79,5 +79,5 @@ function drawLoop(0.1) {
     // set up the next visual callback
     rafID = window.requestAnimationFrame( drawLoop );
 	
-	v=meter.volume.toFixed(3);
+	v=meter.volume;
 }
