@@ -9,8 +9,6 @@ window.onload = function() {
 
     // grab our canvas
 	canvasContext = document.getElementById( "meter" ).getContext("2d");
-	//var v = document.getElementById('vol');
-	//var createFrame = document.createElement("div");
 	
     // monkeypatch Web Audio
     window.AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -64,9 +62,7 @@ function gotStream(stream) {
     drawLoop();
 }
 
-var num=0;
-
-function drawLoop(0.1) {
+function drawLoop( time ) {
     // clear the background
     canvasContext.clearRect(0,0,WIDTH,HEIGHT);
 
@@ -78,11 +74,7 @@ function drawLoop(0.1) {
 
     // draw a bar based on the current volume
     canvasContext.fillRect(0, 0, meter.volume*WIDTH*1.4, HEIGHT);
-	
-	//num=meter.volume;
-	//createFrame.innerHTML = num;
-	//v.appendChild(createFrame);
-	
+
     // set up the next visual callback
     rafID = window.requestAnimationFrame( drawLoop );
 }
