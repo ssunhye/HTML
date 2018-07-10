@@ -149,7 +149,8 @@
 		// set up the next visual callback
 		rafID = window.requestAnimationFrame( drawLoop );
 		
-		num=meter.volume.toFixed(6)*1000;
+		num=meter.volume.toFixed(6);
+		
 		createFrame.innerHTML = num;
 		v.appendChild(createFrame);
 	}
