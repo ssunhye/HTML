@@ -1,13 +1,12 @@
 <!doctype html>
 <html>
-	<head>
-		<title>Volume Meter</title>
-	</head>
-	<body>
-		<p>Sound Meter</p>
-		<canvas id="meter" width="500" height="50"></canvas>
-		<p id="vol"></p>
-	</body>
+<head>
+	<title>Volume Meter</title>
+</head>
+<body>
+	<p>Sound Meter</p>
+	<canvas id="meter" width="500" height="50"></canvas>
+	<p id="vol"></p>
 	<script>
 	function createAudioMeter(audioContext,clipLevel,averaging,clipLag) {
 		var processor = audioContext.createScriptProcessor(512);
@@ -149,4 +148,5 @@
 	}
 
 	</script>
+</body>
 </html>
