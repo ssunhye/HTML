@@ -135,14 +135,16 @@
 		// draw a bar based on the current volume
 		canvasContext.fillRect(0, 0, meter.volume*WIDTH*1.4, HEIGHT);
 		
-		// set up the next visual callback
-		rafID = window.requestAnimationFrame( drawLoop );
-		
 		//meter.volume=meter.volume*100000;
 		//num=meter.volume.toFixed(3)*100000;
 		
 		createFrame.innerHTML = num;
 		v.appendChild(createFrame);
+		
+		// set up the next visual callback
+		rafID = window.requestAnimationFrame( drawLoop );
+		
+
 	}
 
 	</script>
