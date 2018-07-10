@@ -1,20 +1,3 @@
-
-/*
-
-Usage:
-audioNode = createAudioMeter(audioContext,clipLevel,averaging,clipLag);
-
-audioContext: the AudioContext you're using.
-clipLevel: the level (0 to 1) that you would consider "clipping".
-   Defaults to 0.98.
-averaging: how "smoothed" you would like the meter to be over time.
-   Should be between 0 and less than 1.  Defaults to 0.95.
-clipLag: how long you would like the "clipping" indicator to show
-   after clipping has occured, in milliseconds.  Defaults to 750ms.
-
-Access the clipping through node.checkClipping(); use node.shutdown to get rid of it.
-*/
-
 function createAudioMeter(audioContext,clipLevel,averaging,clipLag) {
 	var processor = audioContext.createScriptProcessor(512);
 	processor.onaudioprocess = volumeAudioProcess;
@@ -69,5 +52,7 @@ function volumeAudioProcess( event ) {
     // Now smooth this out with the averaging factor applied
     // to the previous sample - take the max here because we
     // want "fast attack, slow release."
-    this.volume = Math.max(rms, this.volume*this.averaging);
+	
+    //this.volume = Math.max(rms, this.volume*this.averaging);
+	this.volume = Math.max(rms, 0);
 }
