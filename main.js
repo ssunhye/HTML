@@ -80,7 +80,7 @@ function drawLoop(0.1) {
     // draw a bar based on the current volume
     canvasContext.fillRect(0, 0, meter.volume*WIDTH*1.4, HEIGHT);
 	
-	num=meter.volume.toFixed(3);
+	num=meter.volume;
 	createFrame.innerHTML = num;
 	v.appendChild(createFrame);
 	
