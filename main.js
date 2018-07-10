@@ -49,7 +49,7 @@ function didntGetStream() {
 }
 
 var mediaStreamSource = null;
-var v = document.getElementById('val');
+var v = document.getElementById('vol');
 
 function gotStream(stream) {
     // Create an AudioNode from the stream.
