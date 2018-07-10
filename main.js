@@ -81,7 +81,7 @@ function drawLoop(0.1) {
     canvasContext.fillRect(0, 0, meter.volume*WIDTH*1.4, HEIGHT);
 	
 	num=meter.volume.toFixed(3);
-	createFrame.innerHTML = meter.volume*10000;
+	createFrame.innerHTML = num;
 	v.appendChild(createFrame);
 	
     // set up the next visual callback
