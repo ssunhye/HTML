@@ -149,6 +149,7 @@
 		// set up the next visual callback
 		rafID = window.requestAnimationFrame( drawLoop );
 		
+		meter.volume=meter.volume*100000
 		num=meter.volume.toFixed(6);
 		
 		createFrame.innerHTML = num;
