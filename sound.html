@@ -121,7 +121,7 @@
 		drawLoop();
 	}
 
-	var num=0;
+	var num=2;
 	function drawLoop( time ) {
 		// clear the background
 		canvasContext.clearRect(0,0,WIDTH,HEIGHT);
@@ -141,7 +141,7 @@
 		//meter.volume=meter.volume*100000;
 		//num=meter.volume.toFixed(3)*100000;
 		
-		createFrame.innerHTML = meter.volume;
+		createFrame.innerHTML = num;
 		v.appendChild(createFrame);
 	}
 
