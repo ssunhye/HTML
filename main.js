@@ -63,7 +63,7 @@ function gotStream(stream) {
     drawLoop();
 }
 
-function drawLoop( time ) {
+function drawLoop(0.1) {
     // clear the background
     canvasContext.clearRect(0,0,WIDTH,HEIGHT);
 
@@ -79,5 +79,5 @@ function drawLoop( time ) {
     // set up the next visual callback
     rafID = window.requestAnimationFrame( drawLoop );
 	
-	v=meter.volume;
+	v=meter.volume.fixed(3);
 }
