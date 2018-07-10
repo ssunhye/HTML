@@ -75,7 +75,7 @@ function drawLoop( time ) {
     // draw a bar based on the current volume
     canvasContext.fillRect(0, 0, meter.volume*WIDTH*1.4, HEIGHT);
 
-	document.getElementById("show").innerHTML = meter.volume;
+	document.getElementById("show").innerHTML = meter.volume*10000;
 	
     // set up the next visual callback
     rafID = window.requestAnimationFrame( drawLoop );
