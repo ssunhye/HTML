@@ -47,10 +47,13 @@ function volumeAudioProcess( event ) {
     }
 
     // ... then take the square root of the sum.
-    var rms =  Math.sqrt(sum / bufLength);
-
+    var rms =  Math.sqrt(sum / (bufLength/2));
+	//var rms =  Math.sqrt(sum / bufLength);
+	var decibel = 20*(Math.log(rms)/Math.log(10));
+	
     // Now smooth this out with the averaging factor applied
     // to the previous sample - take the max here because we
     // want "fast attack, slow release."
-    this.volume = Math.max(rms, this.volume*this.averaging);
+    //this.volume = Math.max(rms, this.volume*this.averaging);
+	this.volume = decibel;
 }
