@@ -50,7 +50,7 @@ function volumeAudioProcess( event ) {
     var rms =  Math.sqrt(sum / (bufLength/2));
 	//var rms =  Math.sqrt(sum / bufLength);
 	
-	var decibel = 20*(Math.log(rms)/Math.log(10));
+	var decibel = 20*(Math.log(rms)/Math.log(10))+100;
 	
     //this.volume = Math.max(rms, this.volume*this.averaging);
 	this.volume = decibel;
