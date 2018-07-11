@@ -4,10 +4,10 @@ function createAudioMeter(audioContext,clipLevel,averaging,clipLag) {
 	processor.clipping = false;
 	processor.lastClip = 0;
 	processor.volume = 0;
-	//processor.clipLevel = clipLevel || 0.98;
-	processor.clipLevel = clipLevel || 90;
-	//processor.averaging = averaging || 0.95;
-	processor.averaging = averaging || 40;
+	processor.clipLevel = clipLevel || 0.98;
+	//processor.clipLevel = clipLevel || 90;
+	processor.averaging = averaging || 0.95;
+	//processor.averaging = averaging || 40;
 	processor.clipLag = clipLag || 750;
 
 	processor.connect(audioContext.destination);
