@@ -75,7 +75,7 @@ function drawLoop( time ) {
 
     // draw a bar based on the current volume
     //canvasContext.fillRect(0, 0, meter.volume*WIDTH*1.4, HEIGHT);
-	canvasContext.fillRect(0, 0, meter.volume*WIDTH/10000, HEIGHT);
+	canvasContext.fillRect(0, 0, meter.volume*WIDTH/1000, HEIGHT);
 
 	document.getElementById("show").innerHTML = meter.volume;
 	
