@@ -59,26 +59,27 @@ function gotStream(stream) {
     mediaStreamSource.connect(meter);
 
     // kick off the visual updating
-    //drawLoop(0.3);
 	drawLoop();
 }
 
 function drawLoop( time ) {
-    // clear the background
-    canvasContext.clearRect(0,0,WIDTH,HEIGHT);
-
-    // check if we're currently clipping
-    if (meter.checkClipping())
-        canvasContext.fillStyle = "red";
-    else
-        canvasContext.fillStyle = "green";
-
-    // draw a bar based on the current volume
-    //canvasContext.fillRect(0, 0, meter.volume*WIDTH*1.4, HEIGHT);
-	canvasContext.fillRect(0, 0, meter.volume*WIDTH/1000, HEIGHT);
-
-	document.getElementById("show").innerHTML = meter.volume;
 	
-    // set up the next visual callback
-    rafID = window.requestAnimationFrame( drawLoop );
+	// clear the background
+	canvasContext.clearRect(0,0,WIDTH,HEIGHT);
+
+	// check if we're currently clipping
+	if (meter.checkClipping())
+		canvasContext.fillStyle = "red";
+	else
+		canvasContext.fillStyle = "green";
+
+	// draw a bar based on the current volume
+	//canvasContext.fillRect(0, 0, meter.volume*WIDTH*1.4, HEIGHT);
+	canvasContext.fillRect(0, 0, meter.volume*WIDTH/150, HEIGHT);
+	
+	document.getElementById("show").innerHTML = meter.volume;
+	setTimeout(function(){		
+		// set up the next visual callback
+		rafID = window.requestAnimationFrame( drawLoop );
+	}, 200);
 }

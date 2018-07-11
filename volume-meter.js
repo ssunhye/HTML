@@ -5,9 +5,7 @@ function createAudioMeter(audioContext,clipLevel,averaging,clipLag) {
 	processor.lastClip = 0;
 	processor.volume = 0;
 	processor.clipLevel = clipLevel || 0.98;
-	//processor.clipLevel = clipLevel || 90;
 	processor.averaging = averaging || 0.95;
-	//processor.averaging = averaging || 40;
 	processor.clipLag = clipLag || 750;
 
 	processor.connect(audioContext.destination);
@@ -44,13 +42,12 @@ function volumeAudioProcess( event ) {
     		this.lastClip = window.performance.now();
     	}
     	sum += x * x;
-    }
+	}
 
     // ... then take the square root of the sum.
-    var rms =  Math.sqrt(sum / (bufLength/2));
-	//var rms =  Math.sqrt(sum / bufLength);
+	var rms =  Math.sqrt(sum / bufLength);
 	
-	var decibel = 20*(Math.log(rms)/Math.log(10))+110;
+	var decibel = 20*(Math.log10(rms/0.000002));
 	
     //this.volume = Math.max(rms, this.volume*this.averaging);
 	this.volume = decibel;
