@@ -112,3 +112,11 @@ function adjustTime(time, addTime) {
 function makeDate(hour, minute, second) {
     return zeroFill(adjustTime(hour, 24)) + ':' + zeroFill(adjustTime(minute)) + ':' + zeroFill(adjustTime(second));
 }
+
+function popup(){
+	var url= "pop.html";    //팝업창 페이지 URL
+	var winWidth = 300;
+	var winHeight = 200;
+	var popupOption= "width="+winWidth+", height="+winHeight;    //팝업창 옵션(optoin)
+	window.open(url,"",popupOption);
+}
